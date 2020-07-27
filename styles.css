@@ -1,0 +1,24 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* General CSS */
+html,
+body,
+#__next,
+.login {
+  height: 100%;
+  font-family: 'Varela Round', sans-serif;
+}
+
+/* Login Section CSS */
+.login {
+  background-image: url('/login-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
