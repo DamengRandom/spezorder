@@ -5,7 +5,7 @@ const Contexts = createContext();
 class StateContext extends Component {
   state = {
     user: {},
-    testState: 'test state get rendered'
+    userData: []
   };
 
   render() {

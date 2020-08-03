@@ -15,6 +15,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "autoprefixer": "^9.8.4",
+    "axios": "^0.19.2",
     "js-cookie": "^2.2.1",
     "react-google-login": "^5.1.20",
     "react-query": "^2.5.6",

@@ -1,13 +1,12 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import Cookie from "js-cookie";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
-// import { configs } from "../configs";
+import { GoogleLogin } from "react-google-login";
+// import { configs } from "../configs"; // test only
 // components
 import Layout from "../components/templates/Layout";
+import Dashboard from '../components/templates/Dashboard';
 
 function Home() {
-  const Router = useRouter();
   const [loading, setLoading] = React.useState(true);
   const [signin, setSignin] = React.useState(null);
 
@@ -17,12 +16,6 @@ function Home() {
     }
     setLoading(false);
   }, []);
-
-  const logout = () => {
-    Cookie.remove('googleId');
-    // Cookie.set('googleId', googleId, { secure: true }); // for https
-    setSignin(null);
-  }
 
   const successResponseFromGoogle = (response) => {
     console.log(response.profileObj);
@@ -48,12 +41,7 @@ function Home() {
       </Head>
       {signin !== null && 
         <main className="flex-1">
-          <GoogleLogout
-            clientId={process.env.GOOGLE_CLIENT_ID}
-            // clientId={configs.GOOGLE_CLIENT_ID}
-            buttonText="Logout"
-            onLogoutSuccess={logout}
-          />
+          {Cookie.get('googleId') && <Dashboard userId={Cookie.get('googleId')} setSignin={setSignin} />}
         </main>
       }
       {signin === null &&

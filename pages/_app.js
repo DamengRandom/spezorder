@@ -1,5 +1,6 @@
 // pages/_app.js
 import React from "react";
+import { ReactQueryDevtools } from "react-query-devtools";
 
 // Global CSS
 import "../styles.css";
@@ -17,6 +18,7 @@ export default class Root extends App {
       <Container>
         <StateContext>
           <Component {...pageProps} />
+          <ReactQueryDevtools initialIsOpen={false} />
         </StateContext>
       </Container>
     );
