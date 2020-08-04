@@ -27,7 +27,7 @@ export default function Products({ userId }) {
       <Masonry breakpointCols={breakpointColumnsObj}
         className="w-auto flex"
         columnClassName="my-masonry-grid_column">
-          {products.map(({ name, imageUrl, description, price }) =>
+          {products && products.map(({ name, imageUrl, description, price }) =>
             <Card name={name} imageUrl={imageUrl} description={description} price={price} />)}
       </Masonry>
     </div>

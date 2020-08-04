@@ -36,4 +36,5 @@ https://fonts.google.com/specimen/Varela+Round?sidebar.open&selection.family=Var
 https://tailwindcss.com/docs/flex/#app
 https://www.youtube.com/watch?v=OorL3E7oCjA (React Query tutorial)
 https://lifesaver.codes/answer/provide-example-using-context-api-with-custom-app-js(NextJS context API global state setup)
-https://www.npmjs.com/package/react-masonry-css (Quick mansonary layout for products show up)
+https://www.npmjs.com/package/react-masonry-css (Quick masonary layout for products show up)
+https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/modals/regular (Tailwind modal reference)
