@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Cookie from "js-cookie";
 import { GoogleLogin } from "react-google-login";
-// import { configs } from "../configs"; // test only
+import { configs } from "../configs"; // test only
 // components
 import Layout from "../components/templates/Layout";
 import Dashboard from '../components/templates/Dashboard';
@@ -48,8 +48,8 @@ function Home() {
         <main className={"flex flex-col justify-center items-center h-full w-full"}>
           <h3 className="text-white mb-4">Make the order simpler {'&'} easier</h3>
           <GoogleLogin
-            clientId={process.env.GOOGLE_CLIENT_ID}
-            // clientId={configs.GOOGLE_CLIENT_ID}
+            // clientId={process.env.GOOGLE_CLIENT_ID}
+            clientId={configs.GOOGLE_CLIENT_ID}
             buttonText="Start EZ Order"
             onSuccess={successResponseFromGoogle}
             onFailure={failureResponseFromGoogle}

@@ -35,4 +35,5 @@ https://codeconqueror.com/blog/image-optimization-with-next-js
 https://fonts.google.com/specimen/Varela+Round?sidebar.open&selection.family=Varela+Round
 https://tailwindcss.com/docs/flex/#app
 https://www.youtube.com/watch?v=OorL3E7oCjA (React Query tutorial)
-https://lifesaver.codes/answer/provide-example-using-context-api-with-custom-app-js(next context API global state)
+https://lifesaver.codes/answer/provide-example-using-context-api-with-custom-app-js(NextJS context API global state setup)
+https://www.npmjs.com/package/react-masonry-css (Quick mansonary layout for products show up)
