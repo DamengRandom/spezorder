@@ -1,12 +1,12 @@
 import React from 'react';
 import Products from "../organisms/Products";
-import ProductForm from '../organisms/ProductForm';
+import ProductSidebar from '../organisms/ProductSidebar';
 
 export default function Dashboard({ userId, setSignin }) {
   return (
     <div className="flex flex-col md:flex-row">
       <div className="flex-none md:min-h-screen">
-        <ProductForm setSignin={setSignin} />
+        <ProductSidebar setSignin={setSignin} />
       </div>
       <div className="flex-grow w-full">
         <Products userId={userId} />

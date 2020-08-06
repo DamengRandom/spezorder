@@ -1,16 +1,11 @@
 import React from 'react';
+import Form from "./Form";
 
 export default function Modal({ setShowModal }) {
   return (
-    // <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50   outline-none focus:outline-none"
-    // >
-    //   <button className="" onClick={() => setToggleModal(false)}>Close</button>
-    //   Modal
-    // </div>
     <>
       <div
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-        onClick={() => setShowModal(false)}
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl">
           {/*content*/}
@@ -31,26 +26,7 @@ export default function Modal({ setShowModal }) {
             </div>
             {/*body*/}
             <div className="relative p-6 flex-auto">
-              form here
-            </div>
-            {/*footer*/}
-            <div className="flex items-center justify-end p-6 border-t border-solid border-gray-300">
-              <button
-                className="text-red-500 background-transparent font-bold uppercase text-sm outline-none focus:outline-none p-2"
-                type="button"
-                style={{ transition: "all .15s ease" }}
-                onClick={() => setShowModal(false)}
-              >
-                Close
-              </button>
-              <button
-                className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm shadow hover:shadow-lg outline-none focus:outline-none p-2"
-                type="button"
-                style={{ transition: "all .15s ease" }}
-                onClick={() => setShowModal(false)}
-              >
-                Save Changes
-              </button>
+              <Form />
             </div>
           </div>
         </div>

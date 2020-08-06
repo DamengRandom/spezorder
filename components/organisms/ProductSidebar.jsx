@@ -3,7 +3,7 @@ import Navbar from "../atoms/Navbar";
 import Footer from '../atoms/Footer';
 import Modal from '../molecules/Modal';
 
-export default function ProductForm({ setSignin }) {
+export default function ProductSidebar({ setSignin }) {
   const [isModalShown, setShowModal] = React.useState(false);
   return (
     <div className="flex flex-col justify-between bg-gray-200 h-full md:max-w-md sticky">
@@ -29,7 +29,6 @@ export default function ProductForm({ setSignin }) {
             TBC ATM
           </div>
         </div>
-
         {isModalShown && <Modal setShowModal={setShowModal} />}
       </div>
       <Footer />

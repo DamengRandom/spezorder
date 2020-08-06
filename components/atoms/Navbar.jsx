@@ -1,7 +1,7 @@
 import React from 'react';
 import Cookie from "js-cookie";
 import { GoogleLogout } from "react-google-login";
-// import { configs } from "../../configs"; // test only
+import { configs } from "../../configs"; // test only
 
 export default function Navbar({ setSignin }) {
   const [user, setUser] = React.useState({
@@ -30,8 +30,8 @@ export default function Navbar({ setSignin }) {
       <p>{user.name}</p>
       <img className="rounded-full h-16 w-16" src={user.imageUrl} alt={user.name} />
       <GoogleLogout
-        clientId={process.env.GOOGLE_CLIENT_ID}
-        // clientId={configs.GOOGLE_CLIENT_ID}
+        // clientId={process.env.GOOGLE_CLIENT_ID}
+        clientId={configs.GOOGLE_CLIENT_ID}
         buttonText="Logout"
         onLogoutSuccess={logout}
       />
