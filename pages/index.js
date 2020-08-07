@@ -19,10 +19,9 @@ function Home() {
 
   const successResponseFromGoogle = (response) => {
     console.log(response.profileObj);
-    const { profileObj: { name, imageUrl, googleId } } = response;
+    const { profileObj: { name, googleId } } = response;
     if (response && response.profileObj) {
       Cookie.set('googleId', googleId);
-      Cookie.set('imageUrl', imageUrl);
       Cookie.set('name', name);
       // Cookie.set('googleId', googleId, { secure: true }); // for https
       setSignin(Cookie.get('googleId'));

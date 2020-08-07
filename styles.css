@@ -5,6 +5,7 @@
 @tailwind utilities;
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 /* General CSS */
 html,
@@ -21,4 +22,12 @@ body,
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.art-title {
+  font-family: 'Sriracha', cursive;
+}
+
+.-z-1 {
+  z-index: -1;
 }

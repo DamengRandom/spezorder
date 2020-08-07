@@ -6,7 +6,7 @@ import Field from "../atoms/Field";
 export default function Form() {
   const formFields = [
     {
-      label: 'Name',
+      label: 'Product Name',
       name: 'name',
       register: {
         required: `Name is required`,
@@ -14,7 +14,7 @@ export default function Form() {
       }
     },
     {
-      label: 'Image URL',
+      label: 'Product Image URL',
       name: 'imageUrl',
       register: {
         required: `Image URL is required`,
@@ -22,7 +22,7 @@ export default function Form() {
       }
     },
     {
-      label: 'Description',
+      label: 'Product Description',
       name: 'description',
       register: {
         required: `Description is required`,
@@ -30,7 +30,7 @@ export default function Form() {
       }
     },
     {
-      label: 'Price',
+      label: 'Product Price',
       name: 'price',
       register: {
         required: `Price is required`,
@@ -45,7 +45,9 @@ export default function Form() {
       {formFields.map(field => (
         <Field field={field} register={register} errors={errors} />
       ))}
-      <input type="submit" />
+      <div className="text-right mt-8">
+        <input type="submit" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent" />
+      </div>
     </form>
   )
 }

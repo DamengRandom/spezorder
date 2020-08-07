@@ -6,12 +6,14 @@ import Modal from '../molecules/Modal';
 export default function ProductSidebar({ setSignin }) {
   const [isModalShown, setShowModal] = React.useState(false);
   return (
-    <div className="flex flex-col justify-between bg-gray-200 h-full md:max-w-md sticky">
-      <div className="sticky top-0 p-6">
+    <div className="flex flex-col justify-between bg-gray-200 h-full md:max-w-sm sticky">
+      <div className="sticky top-0">
         <Navbar setSignin={setSignin} />
         <div className="max-w-sm overflow-hidden">
           <div className="divide-y-2 divide-gray-400 mt-4 mb-6">
-            <p>Starting generate your tailored menu for your customers !!</p>
+            <p className="art-title">
+              Starting generate your tailored menu for your customers !!
+            </p>
           </div>
           <div className="mb-4">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full"
