@@ -44,3 +44,5 @@ https://stackoverflow.com/questions/4098415/use-regex-to-get-image-url-in-html-j
 https://react-hook-form.com/advanced-usage/ (Advanced usage of creating pattern validation by react hook form)
 https://stackoverflow.com/questions/55023073/react-google-login-inline-styling (Custom google logout button styling)
 https://getwaves.io/ (Get waves svg background image)
+https://medium.com/javascript-in-plain-english/react-context-api-part-2-updating-state-through-a-consumer-7be723b54d7b (Context API how to update state)
+

@@ -23,7 +23,7 @@ export default function Products({ userId }) {
     return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
   return (
-    <div className="flex m-2">
+    <div className={`flex m-2`}>
       {products ?
         <Masonry breakpointCols={breakpointColumnsObj}
           className="w-auto flex"
