@@ -1,39 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from "../atoms/Navbar";
 import Footer from '../atoms/Footer';
 import Modal from '../molecules/Modal';
+import {
+  ContextsConsumer
+} from "../../utils/StateContext";
 
 export default function ProductSidebar({ setSignin }) {
-  const [isModalShown, setShowModal] = React.useState(false);
+  const [isModalShown, setShowModal] = useState(false);
   return (
-    <div className="flex flex-col justify-between bg-gray-200 h-full md:max-w-sm sticky">
-      <div className="sticky top-0">
-        <Navbar setSignin={setSignin} />
-        <div className="max-w-sm overflow-hidden">
-          <div className="divide-y-2 divide-gray-400 mt-4 mb-6">
-            <p className="art-title">
-              Starting generate your tailored menu for your customers !!
-            </p>
+    <ContextsConsumer>
+      {({ state: { darkmode } }) => (
+        <div className={`flex flex-col justify-between h-full md:max-w-sm sticky ${!darkmode ? 'bg-gray-800' : 'bg-white'}`}>
+          <div className="sticky top-0">
+            <Navbar setSignin={setSignin} />
+            <div className={`max-w-sm overflow-hidden p-6`}>
+              <div className="divide-y-2 divide-gray-400 mt-8 text-right">
+                <p className={`art-title ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}>
+                  Create products (Show what you got)
+                </p>
+              </div>
+              <div className="mt-4 mb-4 text-right">
+                <button className={`text-teal font-bold ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}
+                  onClick={() => setShowModal(true)}>
+                  - Add Product (&#9776;)
+                </button>
+              </div>
+              <div className="divide-y-2 divide-gray-400 mt-8">
+                <p className={`art-title ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}>
+                  Generating tailored menu for your customers
+                </p>
+              </div>
+              <div className="mt-4 mb-4">
+                <button className={`text-teal font-bold ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}
+                  onClick={() => {}}>
+                  - View Menu (&#9783;)
+                </button>
+              </div>
+            </div>
+            {isModalShown && <Modal setShowModal={setShowModal} />}
           </div>
-          <div className="mb-4">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full"
-              onClick={() => setShowModal(true)}>
-              (+) Product
-            </button>
-          </div>
-          <div className="mb-4">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full"
-              onClick={() => {}}>
-              View Menu
-            </button>
-          </div>
-          <div className="mb-4">
-            TBC ATM
-          </div>
+          <Footer />
         </div>
-        {isModalShown && <Modal setShowModal={setShowModal} />}
-      </div>
-      <Footer />
-    </div>
+      )}
+    </ContextsConsumer>
   )
 }

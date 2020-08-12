@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cookie from "js-cookie";
 
 export default function Layout({ children, ...props }) {
-  const [token, setToken] = React.useState(null);
+  const [token, setToken] = useState(null);
   const { signin } = props;
 
-  React.useEffect(() => {
+  useEffect(() => {
     if(Cookie.get("googleId")) {
       setToken(Cookie.get("googleId"));
     }

@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Cookie from "js-cookie";
 import { GoogleLogin } from "react-google-login";
@@ -7,10 +8,10 @@ import Layout from "../components/templates/Layout";
 import Dashboard from '../components/templates/Dashboard';
 
 function Home() {
-  const [loading, setLoading] = React.useState(true);
-  const [signin, setSignin] = React.useState(null);
+  const [loading, setLoading] = useState(true);
+  const [signin, setSignin] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if(Cookie.get('googleId')) {
       setSignin(Cookie.get('googleId'));
     }

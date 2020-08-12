@@ -8,18 +8,12 @@ export default function board() {
     <ContextsConsumer>
       {
         ({
-          user,
-          testState
+          mode
         }) => (
             <>
-              <pre>
-                {
-                  JSON.stringify(user, null, 2)
-                }
-              </pre>
               <p>
                 {
-                  testState
+                  mode
                 }
               </p>
             </>

@@ -4,13 +4,21 @@ const Contexts = createContext();
 
 class StateContext extends Component {
   state = {
-    user: {},
-    userData: []
+    darkmode: false
+  };
+
+  toggleMode = () => {
+    this.setState({
+      darkmode: !this.state.darkmode
+    });
   };
 
   render() {
     return (
-      <Contexts.Provider value={this.state}>
+      <Contexts.Provider value={{
+        state: this.state,
+        toggleMode: this.toggleMode
+      }}>
         {this.props.children}
       </Contexts.Provider>
     );

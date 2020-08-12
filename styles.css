@@ -8,6 +8,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 /* General CSS */
+* {
+  color: #2d3748;
+}
+
 html,
 body,
 #__next,

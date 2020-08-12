@@ -1,9 +1,6 @@
 import React from 'react';
 
 export default function Field({ field, register, errors }) {
-  // const CapitalizeFieldText =
-  //   field => field.charAt(0).toUpperCase() + field.slice(1);
-
   return (
     <div className="w-full mb-6 md:mb-0">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -16,7 +13,7 @@ export default function Field({ field, register, errors }) {
         ref={register(field.register)}
       />
       {errors[field] &&
-        <p className="text-red-500 text-xs italic">
+        <p className="text-white text-xs italic">
           {errors[field].message}
         </p>
       }
