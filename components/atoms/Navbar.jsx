@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Cookie from "js-cookie";
-import { GoogleLogout } from "react-google-login";
-import { configs } from "../../configs"; // test only
-import {
-  ContextsConsumer
-} from "../../utils/StateContext";
+import Cookie from 'js-cookie';
+import PropTypes, { bool, func, string, object } from 'prop-types';
+import { GoogleLogout } from 'react-google-login';
+// configs
+import { configs } from '../../configs'; // test only
+// functions
+import { ContextsConsumer } from "../../utils/StateContext";
 
 export default function Navbar({ setSignin }) {
   const [user, setUser] = useState({
@@ -42,7 +43,10 @@ export default function Navbar({ setSignin }) {
             <div className="flex items-center p-6 pl-6 pr-6 pt-0 pb-0">
               <p className={`flex-1 ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}>Hi {user.name},</p>
               <p className={`mr-4 cursor-pointer ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}
-                onClick={toggleMode}
+                onClick={() => {
+                  toggleMode();
+                  Cookie.set('darkmode', darkmode);
+                }}
               >
                 {darkmode ? 'Darker' : 'Lighter'}
               </p>
@@ -66,3 +70,14 @@ export default function Navbar({ setSignin }) {
     </ContextsConsumer>
   )
 }
+
+Navbar.propTypes = {
+  state: PropTypes.shape({
+    darkmode: bool,
+    toggleMode: func
+  }),
+  configs: PropTypes.shape({
+    GOOGLE_CLIENT_ID: string
+  }),
+  user: object
+};

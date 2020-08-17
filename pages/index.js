@@ -39,12 +39,12 @@ function Home() {
         <title>SPEZ Order: Make The Order Simpler {`&`} Easier</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {signin !== null && 
+      {(signin !== null || signin !== undefined) && 
         <main className="flex-1">
           {Cookie.get('googleId') && <Dashboard userId={Cookie.get('googleId')} setSignin={setSignin} />}
         </main>
       }
-      {signin === null &&
+      {(signin === null || signin === undefined) &&
         <main className={"flex flex-col justify-center items-center h-full w-full"}>
           <h3 className="text-white mb-4">Make the order simpler {'&'} easier</h3>
           <GoogleLogin

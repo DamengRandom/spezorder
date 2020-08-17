@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes, { func, string, bool } from 'prop-types';
+// functions
+import { ContextsConsumer } from "../../utils/StateContext";
+// components
 import Products from "../organisms/Products";
 import ProductSidebar from '../organisms/ProductSidebar';
-import {
-  ContextsConsumer
-} from "../../utils/StateContext";
 
 export default function Dashboard({ userId, setSignin }) {
   return (
@@ -21,3 +22,11 @@ export default function Dashboard({ userId, setSignin }) {
     </ContextsConsumer>
   )
 }
+
+Dashboard.propTypes = {
+  userId: string,
+  setSignin: func,
+  state: PropTypes.shape({
+    darkmode: bool
+  })
+};

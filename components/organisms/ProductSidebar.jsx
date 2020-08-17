@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes, { func, bool } from 'prop-types';
+// functions
+import { ContextsConsumer } from "../../utils/StateContext";
+// components
 import Navbar from "../atoms/Navbar";
 import Footer from '../atoms/Footer';
 import Modal from '../molecules/Modal';
-import {
-  ContextsConsumer
-} from "../../utils/StateContext";
 
 export default function ProductSidebar({ setSignin }) {
   const [isModalShown, setShowModal] = useState(false);
@@ -46,3 +47,10 @@ export default function ProductSidebar({ setSignin }) {
     </ContextsConsumer>
   )
 }
+
+ProductSidebar.propTypes = {
+  setSignin: func,
+  state: PropTypes.shape({
+    darkmode: bool
+  })
+};

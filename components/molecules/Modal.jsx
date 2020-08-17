@@ -1,4 +1,6 @@
 import React from 'react';
+import { func } from 'prop-types';
+// components
 import Form from "./Form";
 
 export default function Modal({ setShowModal }) {
@@ -8,9 +10,9 @@ export default function Modal({ setShowModal }) {
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
       >
         <div className="relative w-auto my-6 mx-auto max-w-2xl md:w-1/2">
-          {/*content*/}
+          {/* Modal content */}
           <div className="border-0 shadow-md relative flex flex-col w-full bg-white outline-none focus:outline-none">
-            {/*header*/}
+            {/* Modal header */}
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300">
               <h3 className="text-xl font-semibold">
                 Create A Product
@@ -24,14 +26,18 @@ export default function Modal({ setShowModal }) {
                 </span>
               </button>
             </div>
-            {/*body*/}
+            {/* Modal body */}
             <div className="relative p-6 flex-auto">
               <Form />
             </div>
           </div>
         </div>
       </div>
-      <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+      <div className="opacity-25 fixed inset-0 z-40 bg-black" />
     </>
   )
 }
+
+Modal.propTypes = {
+  setShowModal: func
+};

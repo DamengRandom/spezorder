@@ -1,7 +1,7 @@
 import React from 'react';
-import {
-  ContextsConsumer
-} from "../../utils/StateContext";
+import PropTypes, { bool, func, string } from 'prop-types';
+// functions
+import { ContextsConsumer } from '../../utils/StateContext';
 
 export default function Card({ name, description, imageUrl, price }) {
   return (
@@ -23,3 +23,14 @@ export default function Card({ name, description, imageUrl, price }) {
     </ContextsConsumer>
   )
 }
+
+Card.propTypes = {
+  state: PropTypes.shape({
+    darkmode: bool,
+    toggleMode: func
+  }),
+  name: string,
+  description: string,
+  imageUrl: string,
+  price: string
+};

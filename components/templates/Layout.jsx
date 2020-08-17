@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Cookie from "js-cookie";
+import { string, array } from 'prop-types';
 
 export default function Layout({ children, ...props }) {
   const [token, setToken] = useState(null);
@@ -17,3 +18,8 @@ export default function Layout({ children, ...props }) {
     </div>
   )
 }
+
+Layout.propTypes = {
+  children: array,
+  signin: string 
+};
