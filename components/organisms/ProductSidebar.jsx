@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes, { func, bool } from 'prop-types';
+import PropTypes, { func, bool, string } from 'prop-types';
 // functions
 import { ContextsConsumer } from "../../utils/StateContext";
 // components
@@ -7,7 +7,7 @@ import Navbar from "../atoms/Navbar";
 import Footer from '../atoms/Footer';
 import Modal from '../molecules/Modal';
 
-export default function ProductSidebar({ setSignin }) {
+export default function ProductSidebar({ setSignin, userId }) {
   const [isModalShown, setShowModal] = useState(false);
   return (
     <ContextsConsumer>
@@ -39,7 +39,7 @@ export default function ProductSidebar({ setSignin }) {
                 </button>
               </div>
             </div>
-            {isModalShown && <Modal setShowModal={setShowModal} />}
+            {isModalShown && <Modal setShowModal={setShowModal} userId={userId} />}
           </div>
           <Footer />
         </div>
@@ -50,6 +50,7 @@ export default function ProductSidebar({ setSignin }) {
 
 ProductSidebar.propTypes = {
   setSignin: func,
+  userId: string,
   state: PropTypes.shape({
     darkmode: bool
   })

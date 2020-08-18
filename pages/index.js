@@ -19,7 +19,6 @@ function Home() {
   }, []);
 
   const successResponseFromGoogle = (response) => {
-    console.log(response.profileObj);
     const { profileObj: { name, googleId } } = response;
     if (response && response.profileObj) {
       Cookie.set('googleId', googleId);
@@ -41,7 +40,8 @@ function Home() {
       </Head>
       {(signin !== null || signin !== undefined) && 
         <main className="flex-1">
-          {Cookie.get('googleId') && <Dashboard userId={Cookie.get('googleId')} setSignin={setSignin} />}
+          {Cookie.get('googleId') &&
+            <Dashboard userId={Cookie.get('googleId')} setSignin={setSignin} />}
         </main>
       }
       {(signin === null || signin === undefined) &&

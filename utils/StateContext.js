@@ -1,18 +1,11 @@
 import React, { Component, createContext } from "react";
-import Cookie from "js-cookie";
 
 const Contexts = createContext();
 
 class StateContext extends Component {
   state = {
-    darkmode: false
+    darkmode: true
   };
-
-  componentDidMount() {
-    this.setState({
-      darkmode: Cookie.get('darkmode') === 'true' ? true : false
-    });
-  }
   
   toggleMode = () => {
     this.setState({

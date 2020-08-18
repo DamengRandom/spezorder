@@ -1,9 +1,9 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 // components
 import Form from "./Form";
 
-export default function Modal({ setShowModal }) {
+export default function Modal({ setShowModal, userId }) {
   return (
     <>
       <div
@@ -28,7 +28,7 @@ export default function Modal({ setShowModal }) {
             </div>
             {/* Modal body */}
             <div className="relative p-6 flex-auto">
-              <Form />
+              <Form userId={userId} setShowModal={setShowModal} />
             </div>
           </div>
         </div>
@@ -39,5 +39,6 @@ export default function Modal({ setShowModal }) {
 }
 
 Modal.propTypes = {
+  userId: string,
   setShowModal: func
 };

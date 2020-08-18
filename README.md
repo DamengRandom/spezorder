@@ -48,3 +48,5 @@ https://medium.com/javascript-in-plain-english/react-context-api-part-2-updating
 https://reactjs.org/docs/typechecking-with-proptypes.html (recall knowledge for prop types)
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some (how to use array.some [knowledge recall])
 https://stackoverflow.com/questions/38786973/how-to-set-component-default-props-on-react-component (default props knowledge recall)
+https://github.com/react-hook-form/error-message (react hooks form - validation error messages)
+https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data (axios post api call recall)
