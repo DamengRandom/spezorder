@@ -22,7 +22,7 @@ export default function Form({ userId, setShowModal }) {
 
   return (
     <ContextsConsumer>
-      {({ fetchProducts }) => (
+      {() => (
         <form onSubmit={handleSubmit(onSubmit)}>
           {isFailed && <p>Ooops, something is wrong, please try it again.</p>}
           {formFields.map(field => (

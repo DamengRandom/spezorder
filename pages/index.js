@@ -12,7 +12,7 @@ function Home() {
   const [signin, setSignin] = useState(null);
 
   useEffect(() => {
-    if(Cookie.get('googleId')) {
+    if (Cookie.get('googleId')) {
       setSignin(Cookie.get('googleId'));
     }
     setLoading(false);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
-import PropTypes, { func, string, bool } from 'prop-types';
+import PropTypes, { func, string, bool, array } from 'prop-types';
 // functions
 import { ContextsConsumer } from "../../utils/StateContext";
 import productFetcher from '../../utils/productFetcher';
@@ -39,6 +39,7 @@ export default function Dashboard({ userId, setSignin }) {
 Dashboard.propTypes = {
   userId: string,
   setSignin: func,
+  products: array,
   state: PropTypes.shape({
     darkmode: bool
   })

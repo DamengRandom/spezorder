@@ -1,6 +1,5 @@
 import axios from 'axios';
 // functions
-import productFetcher from './productFetcher';
 
 export default (userId, data, setFailed, setShowModal) =>
   axios({
@@ -12,9 +11,8 @@ export default (userId, data, setFailed, setShowModal) =>
     data
   })
   .then(function () {
+    setFailed(false);
     setShowModal(false);
-  }).then(() => {
-    return productFetcher(userId);
   })
   .catch(function (error) {
     setFailed(true);

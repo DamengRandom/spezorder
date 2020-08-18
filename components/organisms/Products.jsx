@@ -1,30 +1,14 @@
-// import React, { useEffect, useState } from 'react';
 import React from 'react';
-// import { useQuery } from 'react-query';
 import Masonry from 'react-masonry-css';
-import PropTypes, { number, string, object } from 'prop-types';
+import PropTypes, { string, object, array } from 'prop-types';
 import Card from '../molecules/Card';
-// functions
-// import productFetcher from '../../utils/productFetcher';
 
-// export default function Products({ userId }) {
 export default function Products({ products }) {
-  // const {status, data, error} = useQuery('products', () => productFetcher(userId));
-  // const [products, setProducts] = useState([]);
   const breakpointColumnsObj = {
     default: 3,
     768: 2,
     480: 1
   };
-
-  // useEffect(() => {
-  //   setProducts(data);
-  // }, [data]);
-
-  // if(status === 'loading')
-  //   return <div>Loading ..</div>;
-  // if(status === 'error')
-  //   return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
   return (
     <div className={`flex m-2`}>
@@ -47,10 +31,5 @@ export default function Products({ products }) {
 Products.propTypes = {
   userId: string,
   breakpointColumnsObj: object,
-  products: PropTypes.shape({
-    name: string,
-    imageUrl: string,
-    description: string,
-    price: number
-  })
+  products: array
 };
