@@ -10,8 +10,8 @@ export default function Card({ name, description, imageUrl, price }) {
         <div className={`max-w-sm overflow-hidden shadow-lg m-2 mb-4 ${!darkmode ? 'bg-white' : 'bg-white'}`}>
           <img className="w-full" src={imageUrl} alt={`image-${name}`} />
           <div className={`px-6 py-4`}>
-            {name && <div className={`font-bold text-xl mb-2 ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}>{name}</div>}
-            <p className={`text-gray-700 text-base ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}>
+            {name && <div className={`font-bold text-xl mb-2 ${!darkmode ? 'text-teal-400' : 'text-gray-800'} break-all`}>{name}</div>}
+            <p className={`text-gray-700 text-base ${!darkmode ? 'text-teal-400' : 'text-gray-800'} break-all`}>
               {description}
             </p>
           </div>
