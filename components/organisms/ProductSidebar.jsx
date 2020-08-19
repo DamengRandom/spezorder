@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes, { func, bool, string } from 'prop-types';
 // functions
-import { ContextsConsumer } from "../../utils/StateContext";
+import { ContextsConsumer } from '../../utils/StateContext';
 // components
-import Navbar from "../atoms/Navbar";
+import Navbar from '../atoms/Navbar';
 import Footer from '../atoms/Footer';
 import Modal from '../molecules/Modal';
 

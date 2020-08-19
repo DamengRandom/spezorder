@@ -1,31 +1,40 @@
-import React, { Component, createContext } from "react";
+import React, { useEffect, useState, createContext } from 'react';
+import Cookie from 'js-cookie';
+import { useQuery } from 'react-query';
+// functions
+import productFetcher from '../utils/productFetcher';
 
 const Contexts = createContext();
 
-class StateContext extends Component {
-  state = {
-    darkmode: true
-  };
-  
-  toggleMode = () => {
-    this.setState({
-      darkmode: !this.state.darkmode
-    });
-  };
+export default function StateContext({ children }) {
+  const { data } = useQuery('products', () => productFetcher(Cookie.get('googleId')));
+  const [darkmode, setDarkMode] = useState(true);
+  const [products, setProducts] = useState([]);
 
-  render() {
-    return (
-      <Contexts.Provider value={{
-        state: this.state,
-        toggleMode: this.toggleMode
-      }}>
-        {this.props.children}
-      </Contexts.Provider>
-    );
+  useEffect(() => {
+    setProducts(data);
+    return () => {
+      // cleanup
+    }
+  }, [data]);
+
+  const toggleMode = () => {
+    setDarkMode(!darkmode);
   }
-};
+
+  return (
+    <Contexts.Provider value={{
+      state: {
+        darkmode,
+        products
+      },
+      toggleMode,
+      setProducts
+    }}>
+      {children}
+    </Contexts.Provider>
+  )
+}
 
 const ContextsConsumer = Contexts.Consumer;
-
-export default StateContext;
 export { ContextsConsumer };

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { string, object } from "prop-types";
+import PropTypes, { string, object } from 'prop-types';
 
 export default function Field({ field, register, errors }) {
   const validationTypes = Object.keys(field.register);
@@ -9,7 +9,7 @@ export default function Field({ field, register, errors }) {
         {field.label}
       </label>
       <input
-        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-teal-400 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
         name={field.name}
         defaultValue={""}
         ref={register(field.register)}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 // functions
 
-export default (userId, data, setFailed, setShowModal) =>
+export default (userId, data, setFailed, setShowModal, products, setProducts) =>
   axios({
     method: 'post',
     url: `https://135zlxhhmj.execute-api.ap-southeast-2.amazonaws.com/dev/products/${userId}`,
@@ -10,9 +10,10 @@ export default (userId, data, setFailed, setShowModal) =>
     },
     data
   })
-  .then(function () {
+  .then(() => {
     setFailed(false);
     setShowModal(false);
+    setProducts([...products, data]);
   })
   .catch(function (error) {
     setFailed(true);

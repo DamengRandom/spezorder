@@ -1,7 +1,7 @@
 import React from 'react';
 import { func, string } from 'prop-types';
 // components
-import Form from "./Form";
+import Form from './Form';
 
 export default function Modal({ setShowModal, userId }) {
   return (

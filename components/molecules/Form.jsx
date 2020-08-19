@@ -7,14 +7,14 @@ import { formFields } from '../../constants/formConstants';
 import createProduct from '../../utils/createProduct';
 import { ContextsConsumer } from '../../utils/StateContext';
 // components
-import Field from "../atoms/Field";
+import Field from '../atoms/Field';
 
 export default function Form({ userId, setShowModal }) {
   const [isFailed, setFailed] = useState(false);
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
+  const onSubmit = (data, products, setProducts) => {
     if (userId) {
-      createProduct(userId, data, setFailed, setShowModal);
+      createProduct(userId, data, setFailed, setShowModal, products, setProducts);
     } else {
       setFailed(true);
     }
@@ -22,14 +22,14 @@ export default function Form({ userId, setShowModal }) {
 
   return (
     <ContextsConsumer>
-      {() => (
-        <form onSubmit={handleSubmit(onSubmit)}>
+      {({ state: { products }, setProducts }) => (
+        <form onSubmit={handleSubmit(data => onSubmit(data, products, setProducts))}>
           {isFailed && <p>Ooops, something is wrong, please try it again.</p>}
           {formFields.map(field => (
             <Field key={field.label} field={field} register={register} errors={errors} />
           ))}
           <div className="text-right mt-8">
-            <input type="submit" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent" />
+            <input type="submit" className="bg-transparent hover:bg-teal-400 text-teal-400 font-semibold hover:text-white py-2 px-4 border border-teal-400 hover:border-transparent" />
           </div>
         </form>
       )}

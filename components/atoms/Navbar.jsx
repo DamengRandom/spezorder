@@ -5,7 +5,7 @@ import { GoogleLogout } from 'react-google-login';
 // configs
 import { configs } from '../../configs'; // test only
 // functions
-import { ContextsConsumer } from "../../utils/StateContext";
+import { ContextsConsumer } from '../../utils/StateContext';
 
 export default function Navbar({ setSignin }) {
   const [user, setUser] = useState({
