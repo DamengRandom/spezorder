@@ -15,7 +15,7 @@ export default function Products() {
     <ContextsConsumer>
       {({ state: { products } }) => (
         <div className={`flex m-2`}>
-        {products ?
+        {(products && products.length > 0) ?
           <Masonry breakpointCols={breakpointColumnsObj}
             className="w-auto flex"
             columnClassName="my-masonry-grid_column">

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+import Cookie from 'js-cookie';
 import PropTypes, { func, bool, string } from 'prop-types';
 // functions
 import { ContextsConsumer } from '../../utils/StateContext';
@@ -35,7 +37,9 @@ export default function ProductSidebar({ setSignin, userId }) {
               <div className="mt-4 mb-4">
                 <button className={`text-teal font-bold ${!darkmode ? 'text-teal-400' : 'text-gray-800'}`}
                   onClick={() => {}}>
-                  - View Menu (&#9783;)
+                    <Link href={`/menu?id=${Cookie.get('googleId')}`}>
+                      <a>- View Menu (&#9783;)</a>
+                    </Link>
                 </button>
               </div>
             </div>

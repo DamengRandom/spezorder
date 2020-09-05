@@ -50,3 +50,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://stackoverflow.com/questions/38786973/how-to-set-component-default-props-on-react-component (default props knowledge recall)
 https://github.com/react-hook-form/error-message (react hooks form - validation error messages)
 https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data (axios post api call recall)
+https://medium.com/@selvaganesh93/how-to-clean-up-subscriptions-in-react-components-using-abortcontroller-72335f19b6f7#:~:text=Warning%3A%20Can't%20perform%20a,memory%20leak%20in%20your%20application.&text=an%20unmounted%20component.-,This%20is%20a%20no%2Dop%2C%20but%20it%20indicates%20a%20memory,in%20a%20useEffect%20cleanup%20function. (cleanup for useEffect hook)
+https://www.youtube.com/watch?v=-xU95CUTvHg (content loading animation: skeltion screen)
+https://www.leighhalliday.com/mock-fetch-jest (fetch unit test)
